@@ -1,9 +1,14 @@
-
 resource "aws_sqs_queue" "primary" {
-  name                      = var.name
+  name                      = var.enable_sqs_fifo_queue ? "${local.queue_name}.fifo" : local.queue_name
   tags                      = var.tags
   receive_wait_time_seconds = var.sqs_receive_wait_time_seconds
   message_retention_seconds = var.sqs_message_retention_seconds
+
+  //FIFO related configurations. If queue is not FIFO-enabled these should not have impact on a standard queue
+  fifo_queue                  = var.enable_sqs_fifo_queue
+  fifo_throughput_limit       = var.sqs_fifo_throughput_limit
+  deduplication_scope         = var.sqs_fifo_deduplication_scope
+  content_based_deduplication = var.sqs_fifo_content_based_deduplication
 
   redrive_policy = var.enable_sqs_redrive ? jsonencode({
     deadLetterTargetArn = aws_sqs_queue.primary_dlq.arn
@@ -35,8 +40,10 @@ resource "aws_sqs_queue_policy" "primary" {
 }
 
 resource "aws_sqs_queue" "primary_dlq" {
-  name = "${var.name}-dlq"
-  tags = var.tags
+  name                  = var.enable_sqs_fifo_queue ? "${local.dlq_name}.fifo" : local.dlq_name
+  fifo_queue            = var.enable_sqs_fifo_queue
+  fifo_throughput_limit = var.sqs_fifo_throughput_limit
+  tags                  = var.tags
 }
 
 # SQS dlq redrive policy
