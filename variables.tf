@@ -43,6 +43,11 @@ variable "sqs_messages_count_period" {
   default = 60
 }
 
+variable "sqs_messages_evaluation_periods" {
+  type    = number
+  default = 1
+}
+
 variable "sqs_receive_wait_time_seconds" {
   type    = number
   default = 20
