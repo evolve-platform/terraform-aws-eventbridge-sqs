@@ -25,7 +25,7 @@ EOF
   comparison_operator = "GreaterThanOrEqualToThreshold"
   threshold           = var.sqs_messages_count_threshold
   period              = var.sqs_messages_count_period
-  evaluation_periods  = 1
+  evaluation_periods  = var.sqs_messages_evaluation_periods
 }
 
 # Checks each minute if the queue contains messages older than the threshold
