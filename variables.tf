@@ -58,7 +58,6 @@ variable "sqs_oldest_message_datapoints_to_alarm" {
   default     = 1
 }
 
-// 2
 variable "sqs_messages_count_threshold" {
   type        = number
   default     = 1
