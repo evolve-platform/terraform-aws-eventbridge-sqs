@@ -35,9 +35,27 @@ variable "sns_monitoring_arn" {
 }
 
 variable "sqs_oldest_message_threshold" {
-  type        = string
-  default     = "60"
+  type        = number
+  default     = 60
   description = "The threshold for the oldest message in seconds"
+}
+
+variable "sqs_oldest_message_evaluation_periods" {
+  type        = number
+  default     = 1
+  description = "The number of evaluation periods for the oldest message alarm"
+}
+
+variable "sqs_oldest_message_period" {
+  type        = number
+  default     = 60
+  description = "The period in seconds for the oldest message alarm"
+}
+
+variable "sqs_oldest_message_datapoints_to_alarm" {
+  description = "The number of datapoints to evaluate for the alarm"
+  type        = number
+  default     = 1
 }
 
 variable "sqs_messages_count_threshold" {
@@ -46,15 +64,21 @@ variable "sqs_messages_count_threshold" {
   description = "The threshold for the number of messages in the queue"
 }
 
+variable "sqs_messages_count_evaluation_periods" {
+  type    = number
+  default = 1
+}
+
 variable "sqs_messages_count_period" {
   type        = number
   default     = 60
   description = "The period in seconds for the number of messages in the queue"
 }
 
-variable "sqs_messages_evaluation_periods" {
-  type    = number
-  default = 1
+variable "sqs_messages_count_datapoints_to_alarm" {
+  description = "The number of datapoints to evaluate for the alarm"
+  type        = number
+  default     = 1
 }
 
 variable "sqs_receive_wait_time_seconds" {

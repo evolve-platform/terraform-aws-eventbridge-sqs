@@ -25,7 +25,8 @@ EOF
   comparison_operator = "GreaterThanOrEqualToThreshold"
   threshold           = var.sqs_messages_count_threshold
   period              = var.sqs_messages_count_period
-  evaluation_periods  = var.sqs_messages_evaluation_periods
+  evaluation_periods  = var.sqs_messages_count_evaluation_periods
+  datapoints_to_alarm = var.sqs_messages_count_datapoints_to_alarm
 }
 
 # Checks each minute if the queue contains messages older than the threshold
@@ -51,8 +52,9 @@ EOF
 
   comparison_operator = "GreaterThanOrEqualToThreshold"
   threshold           = var.sqs_oldest_message_threshold
-  period              = 60
-  evaluation_periods  = 1
+  period              = var.sqs_oldest_message_period
+  evaluation_periods  = var.sqs_oldest_message_evaluation_periods
+  datapoints_to_alarm = var.sqs_oldest_message_datapoints_to_alarm
 }
 
 resource "aws_cloudwatch_metric_alarm" "deadletter_queue_present" {

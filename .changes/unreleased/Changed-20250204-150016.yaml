@@ -1,0 +1,3 @@
+kind: Changed
+body: Changed variable `sqs_messages_evaluation_periods` to `sqs_messages_count_evaluation_periods`.
+time: 2025-02-04T15:00:16.935839+01:00
