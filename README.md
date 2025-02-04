@@ -54,6 +54,7 @@ No modules.
 | <a name="input_sqs_message_retention_seconds"></a> [sqs\_message\_retention\_seconds](#input\_sqs\_message\_retention\_seconds) | The number of seconds to retain a message in the queue | `number` | `345600` | no |
 | <a name="input_sqs_messages_count_period"></a> [sqs\_messages\_count\_period](#input\_sqs\_messages\_count\_period) | The period in seconds for the number of messages in the queue | `number` | `60` | no |
 | <a name="input_sqs_messages_count_threshold"></a> [sqs\_messages\_count\_threshold](#input\_sqs\_messages\_count\_threshold) | The threshold for the number of messages in the queue | `number` | `1` | no |
+| <a name="input_sqs_messages_evaluation_periods"></a> [sqs\_messages\_evaluation\_periods](#input\_sqs\_messages\_evaluation\_periods) | n/a | `number` | `1` | no |
 | <a name="input_sqs_oldest_message_threshold"></a> [sqs\_oldest\_message\_threshold](#input\_sqs\_oldest\_message\_threshold) | The threshold for the oldest message in seconds | `string` | `"60"` | no |
 | <a name="input_sqs_receive_wait_time_seconds"></a> [sqs\_receive\_wait\_time\_seconds](#input\_sqs\_receive\_wait\_time\_seconds) | The time in seconds that the receive message call will wait for a message to arrive in the queue before returning | `number` | `20` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
