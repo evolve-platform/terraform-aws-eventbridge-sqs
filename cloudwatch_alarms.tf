@@ -53,7 +53,7 @@ EOF
   comparison_operator = "GreaterThanOrEqualToThreshold"
   threshold           = var.sqs_oldest_message_threshold
   period              = var.sqs_oldest_message_period
-  evaluation_periods  = var.sqs_oldest_message_period
+  evaluation_periods  = var.sqs_oldest_message_evaluation_periods
   datapoints_to_alarm = var.sqs_oldest_message_datapoints_to_alarm
 }
 
