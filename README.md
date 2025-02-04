@@ -51,11 +51,15 @@ No modules.
 | <a name="input_sqs_fifo_deduplication_scope"></a> [sqs\_fifo\_deduplication\_scope](#input\_sqs\_fifo\_deduplication\_scope) | The deduplication scope for the FIFO queue. Valid values are queue (default) and messageGroup. | `string` | `"queue"` | no |
 | <a name="input_sqs_fifo_throughput_limit"></a> [sqs\_fifo\_throughput\_limit](#input\_sqs\_fifo\_throughput\_limit) | The throughput limit for the FIFO queue. Valid values are perQueue (default) and perMessageGroupId. | `string` | `"perQueue"` | no |
 | <a name="input_sqs_max_receive_count"></a> [sqs\_max\_receive\_count](#input\_sqs\_max\_receive\_count) | The maximum number of times a message can be received before being sent to the dead letter queue | `number` | `10` | no |
+| <a name="input_sqs_message_count_datapoints_to_alarm"></a> [sqs\_message\_count\_datapoints\_to\_alarm](#input\_sqs\_message\_count\_datapoints\_to\_alarm) | The number of datapoints to evaluate for the alarm | `number` | `1` | no |
+| <a name="input_sqs_message_count_evaluation_periods"></a> [sqs\_message\_count\_evaluation\_periods](#input\_sqs\_message\_count\_evaluation\_periods) | n/a | `number` | `1` | no |
 | <a name="input_sqs_message_retention_seconds"></a> [sqs\_message\_retention\_seconds](#input\_sqs\_message\_retention\_seconds) | The number of seconds to retain a message in the queue | `number` | `345600` | no |
 | <a name="input_sqs_messages_count_period"></a> [sqs\_messages\_count\_period](#input\_sqs\_messages\_count\_period) | The period in seconds for the number of messages in the queue | `number` | `60` | no |
 | <a name="input_sqs_messages_count_threshold"></a> [sqs\_messages\_count\_threshold](#input\_sqs\_messages\_count\_threshold) | The threshold for the number of messages in the queue | `number` | `1` | no |
-| <a name="input_sqs_messages_evaluation_periods"></a> [sqs\_messages\_evaluation\_periods](#input\_sqs\_messages\_evaluation\_periods) | n/a | `number` | `1` | no |
-| <a name="input_sqs_oldest_message_threshold"></a> [sqs\_oldest\_message\_threshold](#input\_sqs\_oldest\_message\_threshold) | The threshold for the oldest message in seconds | `string` | `"60"` | no |
+| <a name="input_sqs_oldest_message_datapoints_to_alarm"></a> [sqs\_oldest\_message\_datapoints\_to\_alarm](#input\_sqs\_oldest\_message\_datapoints\_to\_alarm) | The number of datapoints to evaluate for the alarm | `number` | `1` | no |
+| <a name="input_sqs_oldest_message_evaluation_periods"></a> [sqs\_oldest\_message\_evaluation\_periods](#input\_sqs\_oldest\_message\_evaluation\_periods) | The number of evaluation periods for the oldest message alarm | `number` | `1` | no |
+| <a name="input_sqs_oldest_message_period"></a> [sqs\_oldest\_message\_period](#input\_sqs\_oldest\_message\_period) | The period in seconds for the oldest message alarm | `number` | `60` | no |
+| <a name="input_sqs_oldest_message_threshold"></a> [sqs\_oldest\_message\_threshold](#input\_sqs\_oldest\_message\_threshold) | The threshold for the oldest message in seconds | `number` | `60` | no |
 | <a name="input_sqs_receive_wait_time_seconds"></a> [sqs\_receive\_wait\_time\_seconds](#input\_sqs\_receive\_wait\_time\_seconds) | The time in seconds that the receive message call will wait for a message to arrive in the queue before returning | `number` | `20` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
 
