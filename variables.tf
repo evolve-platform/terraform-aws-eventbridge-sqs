@@ -65,7 +65,7 @@ variable "sqs_messages_count_threshold" {
   description = "The threshold for the number of messages in the queue"
 }
 
-variable "sqs_message_count_evaluation_periods" {
+variable "sqs_messages_count_evaluation_periods" {
   type    = number
   default = 1
 }
@@ -76,7 +76,7 @@ variable "sqs_messages_count_period" {
   description = "The period in seconds for the number of messages in the queue"
 }
 
-variable "sqs_message_count_datapoints_to_alarm" {
+variable "sqs_messages_count_datapoints_to_alarm" {
   description = "The number of datapoints to evaluate for the alarm"
   type        = number
   default     = 1
