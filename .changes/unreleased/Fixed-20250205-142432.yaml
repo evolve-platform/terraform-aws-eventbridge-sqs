@@ -1,0 +1,3 @@
+kind: Fixed
+body: only set fifo related properties for fifo queues
+time: 2025-02-05T14:24:32.626201+01:00
