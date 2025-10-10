@@ -67,9 +67,10 @@ resource "aws_sqs_queue_policy" "eventbridge_dlq" {
     Version = "2012-10-17",
     Statement = [
       {
-        Sid    = "Dead-letter queue permissions",
-        Action = "sqs:SendMessage",
-        Effect = "Allow",
+        Sid      = "Dead-letter queue permissions",
+        Action   = "sqs:SendMessage",
+        Effect   = "Allow",
+        Resource = aws_sqs_queue.eventbridge_dlq.arn
         Principal = {
           Service = "events.amazonaws.com"
         },
