@@ -28,10 +28,10 @@ variable "lambda_timeout" {
   description = "The timeout for the lambda function in seconds"
 }
 
-variable "sns_monitoring_arn" {
-  type        = string
+variable "sns_monitoring_arns" {
+  type        = list(string)
   default     = null
-  description = "The ARN of the SNS topic to send monitoring alerts to"
+  description = "The list of SNS topic ARNs to send the CloudWatch alarms to. If null, no alarms will be created."
 }
 
 variable "sqs_oldest_message_threshold" {

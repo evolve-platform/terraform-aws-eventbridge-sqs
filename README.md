@@ -5,14 +5,14 @@ Terraform module to manage an AWS Eventbridge event bus.
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.66.1 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.66.1 |
 
 ## Modules
@@ -22,7 +22,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_cloudwatch_event_rule.primary](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_rule) | resource |
 | [aws_cloudwatch_event_target.primary](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) | resource |
 | [aws_cloudwatch_metric_alarm.count_messages_visible](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
@@ -38,7 +38,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_enable_sqs_fifo_queue"></a> [enable\_sqs\_fifo\_queue](#input\_enable\_sqs\_fifo\_queue) | Whether to enable the FIFO queue | `bool` | `false` | no |
 | <a name="input_enable_sqs_redrive"></a> [enable\_sqs\_redrive](#input\_enable\_sqs\_redrive) | Enable the redrive policy for the queue | `bool` | `true` | no |
 | <a name="input_event_bus_name"></a> [event\_bus\_name](#input\_event\_bus\_name) | The name of the event bus | `string` | n/a | yes |
@@ -46,7 +46,7 @@ No modules.
 | <a name="input_lambda_timeout"></a> [lambda\_timeout](#input\_lambda\_timeout) | The timeout for the lambda function in seconds | `number` | `30` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the queue | `string` | n/a | yes |
 | <a name="input_rule_description"></a> [rule\_description](#input\_rule\_description) | The description of the rule | `string` | n/a | yes |
-| <a name="input_sns_monitoring_arn"></a> [sns\_monitoring\_arn](#input\_sns\_monitoring\_arn) | The ARN of the SNS topic to send monitoring alerts to | `string` | `null` | no |
+| <a name="input_sns_monitoring_arns"></a> [sns\_monitoring\_arns](#input\_sns\_monitoring\_arns) | The list of SNS topic ARNs to send the CloudWatch alarms to. If null, no alarms will be created. | `list(string)` | `null` | no |
 | <a name="input_sqs_fifo_content_based_deduplication"></a> [sqs\_fifo\_content\_based\_deduplication](#input\_sqs\_fifo\_content\_based\_deduplication) | Whether to enable content-based deduplication for the FIFO queue | `bool` | `false` | no |
 | <a name="input_sqs_fifo_deduplication_scope"></a> [sqs\_fifo\_deduplication\_scope](#input\_sqs\_fifo\_deduplication\_scope) | The deduplication scope for the FIFO queue. Valid values are queue (default) and messageGroup. | `string` | `"queue"` | no |
 | <a name="input_sqs_fifo_throughput_limit"></a> [sqs\_fifo\_throughput\_limit](#input\_sqs\_fifo\_throughput\_limit) | The throughput limit for the FIFO queue. Valid values are perQueue (default) and perMessageGroupId. | `string` | `"perQueue"` | no |
@@ -66,6 +66,6 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_sqs_queue_arn"></a> [sqs\_queue\_arn](#output\_sqs\_queue\_arn) | The ARN of the SQS queue |
 <!-- END_TF_DOCS -->

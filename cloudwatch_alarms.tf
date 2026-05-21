@@ -1,6 +1,6 @@
 locals {
-  alarm_actions = var.sns_monitoring_arn == null ? [] : [var.sns_monitoring_arn]
-  ok_actions    = var.sns_monitoring_arn == null ? [] : [var.sns_monitoring_arn]
+  alarm_actions = var.sns_monitoring_arns == null ? [] : var.sns_monitoring_arns
+  ok_actions    = var.sns_monitoring_arns == null ? [] : var.sns_monitoring_arns
 }
 
 resource "aws_cloudwatch_metric_alarm" "count_messages_visible" {
