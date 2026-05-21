@@ -1,3 +1,0 @@
-kind: Changed
-body: Renamed sns_monitoring_arn to sns_monitoring_arns and change type to list(string) to be able to pass multiple sns topics
-time: 2026-05-21T15:36:01.763893+02:00
