@@ -28,6 +28,12 @@ variable "lambda_timeout" {
   description = "The timeout for the lambda function in seconds"
 }
 
+variable "sns_monitoring_arn" {
+  type        = string
+  default     = null
+  description = "**Deprecated**: Use `sns_monitoring_arns` instead. The ARN of the SNS topic to send monitoring alerts to."
+}
+
 variable "sns_monitoring_arns" {
   type        = list(string)
   default     = null

@@ -46,6 +46,7 @@ No modules.
 | <a name="input_lambda_timeout"></a> [lambda\_timeout](#input\_lambda\_timeout) | The timeout for the lambda function in seconds | `number` | `30` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the queue | `string` | n/a | yes |
 | <a name="input_rule_description"></a> [rule\_description](#input\_rule\_description) | The description of the rule | `string` | n/a | yes |
+| <a name="input_sns_monitoring_arn"></a> [sns\_monitoring\_arn](#input\_sns\_monitoring\_arn) | **Deprecated**: Use `sns_monitoring_arns` instead. The ARN of the SNS topic to send monitoring alerts to. | `string` | `null` | no |
 | <a name="input_sns_monitoring_arns"></a> [sns\_monitoring\_arns](#input\_sns\_monitoring\_arns) | The list of SNS topic ARNs to send the CloudWatch alarms to. If null, no alarms will be created. | `list(string)` | `null` | no |
 | <a name="input_sqs_fifo_content_based_deduplication"></a> [sqs\_fifo\_content\_based\_deduplication](#input\_sqs\_fifo\_content\_based\_deduplication) | Whether to enable content-based deduplication for the FIFO queue | `bool` | `false` | no |
 | <a name="input_sqs_fifo_deduplication_scope"></a> [sqs\_fifo\_deduplication\_scope](#input\_sqs\_fifo\_deduplication\_scope) | The deduplication scope for the FIFO queue. Valid values are queue (default) and messageGroup. | `string` | `"queue"` | no |
