@@ -31,7 +31,13 @@ variable "lambda_timeout" {
 variable "sns_monitoring_arn" {
   type        = string
   default     = null
-  description = "The ARN of the SNS topic to send monitoring alerts to"
+  description = "**Deprecated**: Use `sns_monitoring_arns` instead. The ARN of the SNS topic to send monitoring alerts to."
+}
+
+variable "sns_monitoring_arns" {
+  type        = list(string)
+  default     = null
+  description = "The list of SNS topic ARNs to send the CloudWatch alarms to. If null, no alarms will be created."
 }
 
 variable "sqs_oldest_message_threshold" {
